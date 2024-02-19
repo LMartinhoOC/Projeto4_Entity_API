@@ -19,7 +19,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        [Route("")]
+        [Route("/VerLista")]
         public ActionResult BuscarLivro()
         {
             try
@@ -35,7 +35,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        [Route("")]
+        [Route("/BuscarPorId")]
         public ActionResult BuscarLivroPorId(int id)
         {
             try
@@ -44,7 +44,7 @@ namespace API.Controllers
 
                 if(livro == null)
                 {
-                    return NotFound($"O livro com o Id {id} não foi encontrado.");
+                    return NotFound($"O livro com o ID {id} não foi encontrado.");
                 }
 
                 return Ok(livro);
@@ -56,7 +56,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        [Route("")]
+        [Route("/InserirLivro")]
         public ActionResult InserirLivro(InserirLivroViewModel model)
         {
             try
@@ -84,7 +84,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        [Route("")]
+        [Route("/EditarLivro")]
         public ActionResult EditarLivro(AtualizarLivroViewModel model)
         {
             try
@@ -104,10 +104,10 @@ namespace API.Controllers
                     else
                     {
                         Livro livro             = new Livro();
+                        livro.Id                = model.Id;
                         livro.Nome              = model.Nome;
                         livro.Autor             = model.Autor;
                         livro.Isbn              = model.Isbn;
-                        livro.Deletado          = false;
 
                         this._livroPersistence.AtualizarLivro(livro);
 
@@ -121,6 +121,7 @@ namespace API.Controllers
         }
 
         [HttpDelete]
+        [Route("/RemoverLivro")]
         public ActionResult DeletarLivro(int id)
         {
             try
@@ -133,11 +134,10 @@ namespace API.Controllers
                 }
                 else
                 {
-                    Livro livro = new Livro();
-                    livro.Deletado = true;
+                    liv.Deletado = true;
 
-                    this._livroPersistence.AtualizarLivro(livro);
-                    return Ok($"Livro {livro.Nome} foi deletado.");
+                    this._livroPersistence.AtualizarLivro(liv);
+                    return Ok($"Livro {liv.Nome} foi deletado.");
                 }
             }
             catch(Exception ex)

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\1 - API\\API.csproj": {}
+    "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\1 - API\\API.csproj": {
+    "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\1 - API\\API.csproj",
-        "projectName": "API",
-        "projectPath": "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\1 - API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\Client\\Client.csproj",
+        "projectName": "Client",
+        "projectPath": "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\luiz.martinho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\1 - API\\obj\\",
+        "outputPath": "C:\\Users\\luiz.martinho\\source\\repos\\Projeto 4\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\luiz.martinho\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,12 +39,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -57,9 +51,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

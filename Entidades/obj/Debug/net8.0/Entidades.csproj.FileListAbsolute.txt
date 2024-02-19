@@ -12,3 +12,4 @@ C:\Users\luiz.martinho\source\repos\Projeto 4\Entidades\obj\Debug\net8.0\ref\Ent
 C:\Users\luiz.martinho\source\repos\Projeto 4\Entidades\bin\Debug\net8.0\Entidades.runtimeconfig.json
 C:\Users\luiz.martinho\source\repos\Projeto 4\Entidades\obj\Debug\net8.0\Entidades.csproj.AssemblyReference.cache
 C:\Users\luiz.martinho\source\repos\Projeto 4\Entidades\obj\Debug\net8.0\Entidades.genruntimeconfig.cache
+C:\Users\luiz.martinho\source\repos\Projeto 4\Entidades\obj\Debug\net8.0\Entidades.sourcelink.json

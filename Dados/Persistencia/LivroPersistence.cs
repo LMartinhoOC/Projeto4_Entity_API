@@ -26,9 +26,9 @@ namespace Dados.Persistencia
             this._contexto.SaveChanges();
         }
 
-        public void DeletarLivro(Livro livro)
+        public void DeletarLivro(Livro livro) //não usado, pois exclui o registro do BD
         {
-            this._contexto.Entry(livro).State = EntityState.Modified;
+            this._contexto.Remove(livro);
             this._contexto.SaveChanges();
         }
 
@@ -37,7 +37,7 @@ namespace Dados.Persistencia
             return this._contexto
                 .Livros
                 .AsNoTracking()
-                .Where(l => l.Id == id && l.Deletado != true)
+                .Where(l => l.Id == id && !l.Deletado)
                 .FirstOrDefault();
         }
 
@@ -46,6 +46,7 @@ namespace Dados.Persistencia
             return this._contexto
                 .Livros
                 .AsNoTracking()
+                .Where(l => !l.Deletado)
                 .ToList();
         }
     }

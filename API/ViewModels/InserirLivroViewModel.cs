@@ -13,7 +13,8 @@ namespace API.ViewModels
         public string Autor { get; set; }
 
         [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "O campo 'ISBN' deve ser composto apenas por números!")]
-        public string? ISBN { get; set; }
+        [Length(0, 13, ErrorMessage = "O código ISBN deve ter 13 dígitos!")]
+        public string ISBN { get; set; }
 
     }
 }

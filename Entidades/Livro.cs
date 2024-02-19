@@ -13,13 +13,15 @@ namespace Entidades
 
         public override string ToString()
         {
+            this.Isbn = FazerISBN(this.Isbn);
+            
             return $"Id: {this.Id}\n" +
                    $"Nome: {this.Nome}\n" +
                    $"Autor: {this.Autor}\n" +
                    $"ISBN: {this.Isbn}\n";
         }
 
-        /*public string FazerISBN(string isbn)
+        public string FazerISBN(string isbn)
         {
             if (isbn == null || isbn.Length != 13) return ("");
             
@@ -32,6 +34,6 @@ namespace Entidades
             string formato = $"{isbn1}-{isbn2}-{isbn3}-{isbn4}-{isbn5}";
 
             return (formato);
-        }*/
+        }
     }
 }
