@@ -29,7 +29,7 @@ namespace Entidades
             string isbn2 = isbn.Substring(3, 1);
             string isbn3 = isbn.Substring(4, 2);
             string isbn4 = isbn.Substring(6, 6);
-            string isbn5 = isbn.Substring(13, 1);
+            string isbn5 = isbn.Substring(12, 1);
 
             string formato = $"{isbn1}-{isbn2}-{isbn3}-{isbn4}-{isbn5}";
 

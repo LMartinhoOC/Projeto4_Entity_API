@@ -67,15 +67,26 @@ namespace API.Controllers
                 }
                 else
                 {
-                    Livro livro =       new Livro();
-                    livro.Nome =        model.Nome;
-                    livro.Autor =       model.Autor;
-                    livro.Isbn =        model.ISBN;
-                    livro.Deletado =    false;
+                    if (!String.IsNullOrEmpty(model.ISBN) && model.ISBN.Length < 13)
+                    {
+                        ModelState.AddModelError("ISBN", "O código ISBN deve ter 13 dígitos ou ser nulo");
 
-                    this._livroPersistence.InserirLivro(livro);
+                        return BadRequest(ModelState);
 
-                    return Ok($"Livro cadastrado com sucesso:\n{livro} ");
+                        //return BadRequest("O código ISBN deve ter 13 dígitos ou ser nulo");
+                    }
+                    else
+                    {
+                        Livro livro = new Livro();
+                        livro.Nome = model.Nome;
+                        livro.Autor = model.Autor;
+                        livro.Isbn = model.ISBN;
+                        livro.Deletado = false;
+
+                        this._livroPersistence.InserirLivro(livro);
+
+                        return Ok($"Livro cadastrado com sucesso:\n{livro} ");
+                    }                   
                 }
             }catch (Exception ex)
             {
